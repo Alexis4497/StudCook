@@ -1,0 +1,240 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  span{
+    font-family: 'Roboto', sans-serif;
+
+  }
+  
+  small {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  h1 {
+    text-align: center;
+    padding: 50px 0;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+    color: inherit;
+    font-size: 40px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    font-weight: 300;
+    color: inherit;
+    padding: 50px;
+  }
+
+  h3{
+    text-align: center;
+    margin-bottom: 100px;
+
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  section {
+    height: 100vh;
+  }
+  
+  nav {
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 50px 0;
+    
+  }
+  
+  nav ul {
+    list-style: none;
+    text-align: center;
+  }
+  nav ul li {
+    display: inline-block;
+  }
+  nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 10px;
+  }
+  nav ul li a,
+  nav ul li a:after,
+  nav ul li a:before {
+    transition: all .5s;
+  }
+  nav ul li a:hover {
+    color: #555;
+  }
+  
+  nav.stroke ul li a,
+  nav.fill ul li a {
+    position: relative;
+  }
+  nav.stroke ul li a:after,
+  nav.fill ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #333;
+    height: 1px;
+  }
+  nav.stroke ul li a:hover:after {
+    width: 100%;
+  }
+
+
+  /* Style logo */
+
+  .logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 156px;
+    width: 350px;
+  }
+
+  /* Style Presentation*/
+
+  .presentation{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Style Vidéos */
+
+  .video-recette{
+
+    display: block;
+    float: right;
+    margin-right: 15%;
+     }
+
+  .description-video{
+
+    display: block;
+    text-align:justify ;
+    
+    margin-left: 10%;
+    margin-right: 40%;
+    margin-bottom: 10%;
+  }
+
+  /* Style icones réseaux sociaux */
+
+.social-icons{
+    display: block;
+    align-items: center;
+    justify-content:space-between ;
+    text-align: center;
+    }
+
+    .fab{ 
+        height: 250px;
+        width: 250px;
+    }
+    
+    .far{ 
+        height: 250px;
+        width: 250px;
+    }
+    
+    .fas{ 
+        height: 250px;
+        width: 250px;
+    }
+
+    .social-logo{
+      color:#212529;
+
+    }
+
+    /* Style Bons Plans*/
+
+    .img-bon-plan{
+      height: 400px;
+      width: 400px;
+      float: right;
+      display: block;
+      margin-right: 15%;
+      
+    }
+
+    .bon-plan{
+      text-align: center;
+      display: block;
+    text-align:justify ;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 40%;
+    margin-bottom: 20%;
+    }
+
+    .img-bon-plan2{
+      height: 400px;
+      width: 400px;
+      float: left;
+      display: block;
+      margin-left: 15%;
+      
+    }
+
+    .bon-plan2{
+      text-align: center;
+    display: block;
+    text-align:justify ;
+    margin-top: 5%;
+    margin-left: 40%;
+    margin-right: 10%;
+    margin-bottom: 20%;
+    
+    }
+
+    .bp {
+      height: 500px;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    /*Style index*/
+
+    .img-membres{
+      height: 600px;
+      width: 600px;
+      display: block;
+      float: right;
+      margin-right: 10%;
+      margin-left: 5%;
+    }
+
+    .span-index{
+      font-family: 'Roboto', sans-serif;
+      display: block;
+      text-align: center;
+      font-size: 27px;
+      margin-left: 5%;
+      margin-right: 10%;
+    }
+
+
+
+   
+

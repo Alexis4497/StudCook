@@ -1,0 +1,18 @@
+home:
+  path : /
+  controller: App\Controller\HomeController::index
+
+recettes:
+  path: /recettes
+  controller: App\Controller\HomeController::recettes
+
+bonsplans:
+  path: /bonsplans
+  controller: App\Controller\HomeController::bonsplans
+
+contact:
+  path: /contact
+  controller: App\Controller\HomeController::contact
+
+
+
