@@ -4,7 +4,17 @@
 
  {% block body %}
 
-    <div class="jumbotron text-center">
+    
         <h1>Recettes</h1>
+
+        {% for r in recette %}
+
+            <h2> {{r.titre_recette}} </h2>
+            <div> {{r.description_recette}} </div>
+
+         {% endfor %}    
         
+
+      
 {% endblock %}
+

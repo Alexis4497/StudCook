@@ -4,15 +4,15 @@ home:
 
 recettes:
   path: /recettes
-  controller: App\Controller\HomeController::recettes
+  controller: App\Controller\RecettesController::recettes
 
 bonsplans:
   path: /bonsplans
-  controller: App\Controller\HomeController::bonsplans
+  controller: App\Controller\BonsPlansController::bonsplans
 
 contact:
   path: /contact
-  controller: App\Controller\HomeController::contact
+  controller: App\Controller\ContactController::contact
 
 
 

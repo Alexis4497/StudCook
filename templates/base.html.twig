@@ -20,7 +20,7 @@
         <nav class="stroke">
           <ul>
             <li><a href="{{ path('home') }}">Accueil</a></li>
-            <li><a href="{{ path('recettes.index') }}">Nos Recettes</a></li>
+            <li><a {% if current_menu is defined and current_menu == 'recettes' %} active {% endif %} href="{{ path('recettes.index') }}">Nos Recettes</a></li>
             <li><a href="{{ path('bonsplans.index') }}">Nos Bons Plans</a></li>
             <li><a href="{{ path('contact.index') }}">Nous Contacter</a></li>
           </ul>
