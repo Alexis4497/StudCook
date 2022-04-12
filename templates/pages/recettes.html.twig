@@ -4,16 +4,28 @@
 
  {% block body %}
 
-    
-        <h1>Recettes</h1>
+         <div class="container mt-4">
+            <h2>Les dernières recettes</h2>
+                <div class="row-flex">
+                    {% for r in recettes %}
 
-        {% for r in recette %}
+                        <div class="col-md-8">
 
-            <h2> {{r.titre_recette}} </h2>
-            <div> {{r.description_recette}} </div>
+                        </div>
 
-         {% endfor %}    
-        
+                        
+                            <div class="col-md-4">
+                                <h2>{{r.titreRecette}}</h2>
+                                {# iframe=" r.lienVideo " #}
+                                <p> {{r.descriptionRecette}} </p>
+                                <h3> {{r.prixRecette}} € </h3>
+
+                            </div>
+                    
+                    {% endfor %}
+                </div>
+        </div>
+
 
       
 {% endblock %}
