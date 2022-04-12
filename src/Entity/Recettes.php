@@ -32,6 +32,11 @@ class Recettes
      */
     private $prixRecette;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lien_video;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Recettes
     public function setPrixRecette(float $prixRecette): self
     {
         $this->prixRecette = $prixRecette;
+
+        return $this;
+    }
+
+    public function getLienVideo(): ?string
+    {
+        return $this->lien_video;
+    }
+
+    public function setLienVideo(string $lien_video): self
+    {
+        $this->lien_video = $lien_video;
 
         return $this;
     }

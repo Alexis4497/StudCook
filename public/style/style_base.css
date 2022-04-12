@@ -236,10 +236,13 @@ body {
 
 
 nav ul li a:active{
-
   color:red
 
+}
 
+.video{
+  height:1000px;
+  width: 600px;
 }
    
 

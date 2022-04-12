@@ -4,19 +4,23 @@
 
  {% block body %}
 
-         <div class="container mt-4">
+         <div>
             <h2>Les dernières recettes</h2>
-                <div class="row-flex">
+                <div>
                     {% for r in recettes %}
 
-                        <div class="col-md-8">
+                        <div class="video">
+
+                        <iframe width="40%" height="100%" src={{r.lienVideo}}></iframe>
+
+                        
 
                         </div>
 
                         
-                            <div class="col-md-4">
+                            <div>
                                 <h2>{{r.titreRecette}}</h2>
-                                {# iframe=" r.lienVideo " #}
+                                
                                 <p> {{r.descriptionRecette}} </p>
                                 <h3> {{r.prixRecette}} € </h3>
 
