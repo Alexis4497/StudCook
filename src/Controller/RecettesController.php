@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Repository\RecettesRepository;
 use App\Entity\Recettes;
+use Doctrine\ORM\Mapping\Id;
 use Doctrine\Persistence\ManagerRegistry;
 
 class RecettesController extends AbstractController
@@ -26,6 +27,26 @@ class RecettesController extends AbstractController
       
         return $this->render('pages/recettes.html.twig', [
             'recettes' => $repository -> findAll([]) 
+        ]);
+    }
+
+    /**
+     * @return Reponse
+     * @Route("/show/{id}", name="show")
+     */
+
+    public function show(Recettes $recettes,RecettesRepository $repository): Response
+    {
+       
+        $monid = $recettes -> getId();
+
+
+
+
+        return $this->render('pages/show.html.twig', [
+            'monid'=> $recettes -> getId(),
+            'recettes' => $repository -> findAll([]), 
+            'current_menu' => 'show'
         ]);
     }
 }

@@ -4,32 +4,26 @@
 
  {% block body %}
 
-         <div>
+       <div class="container">
             <h2>Les dernières recettes</h2>
-                <div>
-                    {% for r in recettes %}
+            <div class="row flex">
+                {% for r in recettes %}
+                    <div class="col-3">
+                        <div class="card">
+                            <div class ="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{ path('show', {id: r.id}) }}">{{ r.titreRecette}}</a>
+                                </h5>
+                                    <iframe class="video-recettes" src={{r.lienVideo}}></iframe>
 
-                        <div class="video">
-
-                        <iframe width="40%" height="100%" src={{r.lienVideo}}></iframe>
-
-                        
-
-                        </div>
-
-                        
-                            <div>
-                                <h2>{{r.titreRecette}}</h2>
-                                
-                                <p> {{r.descriptionRecette}} </p>
-                                <h3> {{r.prixRecette}} € </h3>
-
+                                        <p class="card-text">{{ r.descriptionRecette}}</p>
+                                        <div class="text-primary">{{ r.prixRecette |  number_format(2, ',', ' ') }} €</div>
                             </div>
-                    
-                    {% endfor %}
-                </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-
 
       
 {% endblock %}

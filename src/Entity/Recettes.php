@@ -2,8 +2,13 @@
 
 namespace App\Entity;
 
+
 use App\Repository\RecettesRepository;
 use Doctrine\ORM\Mapping as ORM;
+// use Cocur\Slugify\Slugify;
+
+
+
 
 /**
  * @ORM\Entity(repositoryClass=RecettesRepository::class)
@@ -53,6 +58,11 @@ class Recettes
 
         return $this;
     }
+
+    // public function getSlug(): string
+    // {
+      //  return (new Slugify())->slugify($this->titreRecette);
+    //}
 
     public function getDescriptionRecette(): ?string
     {

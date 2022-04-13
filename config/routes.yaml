@@ -14,5 +14,9 @@ contact:
   path: /contact
   controller: App\Controller\ContactController::contact
 
+show:
+  path: /show/{id}
+  controller:  App\Controller\RecettesController::show
+
 
 

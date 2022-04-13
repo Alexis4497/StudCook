@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}Test page show{% endblock %}
+
+ {% block body %}
+
+
+    {# <h1> {{monid}} </h1> #}
+   
+    {% for r in recettes %}
+
+        {% if monid == r.id %}
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                 <iframe class="video-show" src={{r.lienVideo}}></iframe>
+            </div>
+            <div class="col-md-4">
+                <h1> {{ r.titreRecette }}</h1>
+                <div> <p> {{ r.descriptionRecette }} </p> </div>
+                <div class="prixRecette">{{ r.prixRecette |  number_format(2, ',', ' ') }} €</div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endfor %}
+   
+
+ {% endblock %}
