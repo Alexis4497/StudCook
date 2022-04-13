@@ -4,7 +4,30 @@
 
  {% block body %}
 
-    <div class="jumbotron text-center">
-        <h1>Bons Plans</h1>
-        
+       <div class="container">
+            <h2> Bons Plans</h2>
+            <div class="row flex">
+                {% for b in bonsplans %}
+                    <div class="col-3">
+                        <div class="card">
+                            <div class ="card-body">
+                                <h5 class="card-title">
+                                    <h1> {{b.id}} </h1>
+                                </h5>
+
+                                <h2> {{ b.nomBonPlan }} </h2>
+
+                                    <img src={{ b.lien_image_bon_plan }}></img>
+ 
+
+                                        <p class="card-text">{{ b.description}}</p>
+                                        <div class="text-primary"> <a href="{{b.lienBonPlan}}">{{b.lienBonPlan}}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+      
 {% endblock %}

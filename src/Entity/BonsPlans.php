@@ -32,6 +32,11 @@ class BonsPlans
      */
     private $lienBonPlan;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lien_image_bon_plan;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class BonsPlans
     public function setLienBonPlan(string $lienBonPlan): self
     {
         $this->lienBonPlan = $lienBonPlan;
+
+        return $this;
+    }
+
+    public function getLienImageBonPlan(): ?string
+    {
+        return $this->lien_image_bon_plan;
+    }
+
+    public function setLienImageBonPlan(string $lien_image_bon_plan): self
+    {
+        $this->lien_image_bon_plan = $lien_image_bon_plan;
 
         return $this;
     }
