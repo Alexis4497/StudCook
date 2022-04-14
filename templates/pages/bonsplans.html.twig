@@ -5,23 +5,27 @@
  {% block body %}
 
        <div class="container">
-            <h2> Bons Plans</h2>
+           <div class="class_typewrite">
+                <h1>
+                    <a id="type_writer"class="typewrite" data-period="2000" data-type='[ "Bienvenue sur nos Bons Plans !" ]'>
+                        <span class="wrap"></span>
+                    </a>
+                </h1>
+            </div>
+
             <div class="row flex">
                 {% for b in bonsplans %}
                     <div class="col-3">
-                        <div class="card">
+                        <div>
                             <div class ="card-body">
                                 <h5 class="card-title">
-                                    <h1> {{b.id}} </h1>
+                                    {# {{b.id}} #} {{ b.nomBonPlan }}
                                 </h5>
-
-                                <h2> {{ b.nomBonPlan }} </h2>
-
-                                    <img src={{ b.lien_image_bon_plan }}></img>
+                                    <img class="img_bonsplans" src={{ b.getLienImageBonPlan() }}></img>
  
 
                                         <p class="card-text">{{ b.description}}</p>
-                                        <div class="text-primary"> <a href="{{b.lienBonPlan}}">{{b.lienBonPlan}}</div>
+                                        <div class="text-primary"> <a href="{{b.lienBonPlan}}">{{b.lienBonPlan}}</a></div>
                             </div>
                         </div>
                     </div>

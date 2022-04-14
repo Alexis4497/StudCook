@@ -65,7 +65,7 @@ body {
     display: block;
     padding: 15px;
     text-decoration: none;
-    color: #aaa;
+    color: #555;
     font-weight: 800;
     text-transform: uppercase;
     margin: 0 10px;
@@ -76,7 +76,7 @@ body {
     transition: all .5s;
   }
   nav ul li a:hover {
-    color: #555;
+    color: #aaa;
   }
   
   nav.stroke ul li a,
@@ -262,3 +262,144 @@ nav ul li a:active{
 
 }
 
+.img_bonsplans{
+width: 300px;
+height: 300px;
+
+}
+
+.card-title{
+  font-size: 1.75em;
+  text-align: center;
+  color: #555;
+  font-weight: bold;
+}
+
+.card-text{
+  margin-top: 10px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.text-primary{
+  text-align: center;
+  color: #0095F6;
+}
+
+.typewrite{
+  color:#555;
+  width: auto;
+  text-decoration: none;
+  }
+
+  /* Formulaire de contact */
+  .form-container {
+    padding-top: 20px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    
+  }
+  #reused_form {
+    position: relative;
+    margin: 50px auto;
+  }
+  input {
+    font-size: 0.85em;
+    width: 470px;
+    height: 50px;
+    padding: 0px 15px;
+    background: transparent;
+    outline: none;
+    color: #726659;
+    border: solid 1px #b3aca7;
+    border-bottom:none;
+  }
+  textarea {
+    width: 470px;
+    height: 110px;
+    max-height: 110px;
+    padding: 15px;
+    background: transparent;
+    outline: none;
+    color: #726659;
+    border: solid 1px #b3aca7;
+    resize: none !important;
+  }
+  input::placeholder, textarea::placeholder, input:focus::placeholder, textarea:focus::placeholder {
+    color: #aca49c;
+  }
+  input:hover::placeholder, textarea:hover::placeholder, input:hover:focus::placeholder, textarea:hover:focus::placeholder {
+    color: #e2dedb;
+  }
+  .form-button {
+    background: transparent;
+    border: solid 1px #b3aca7;
+    padding: 20px 75px;
+    margin: 14px 0 -20px 0;
+  }
+  .form-container h4 {
+    font-size: 2em;
+  }
+  #error_message {
+    color: red;
+    border: 1px solid red;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px 15px 8px 15px;
+    box-shadow: 0 0 5px red;
+  }
+  #success_message {
+    color: green;
+    border: 1px solid green;
+    max-width: 400px;
+    margin: 150px auto;
+    padding: 50px;
+    box-shadow: 0 0 5px green;
+  }
+ #container_h4{
+   text-align: center;
+ }
+
+
+
+  /*media queries*/
+  @media screen and (max-width: 470px){
+  .form-container {
+    padding-top: 20px;
+    text-align: center;
+    position: relative;  
+    margin-right: 0; 
+  }
+  input {
+    font-size: 0.85em;
+    width: 280px;
+    height: 50px;
+    padding: 0px 15px;
+    background: transparent;
+    outline: none;
+    color: #726659;
+    border: solid 1px #b3aca7;
+    border-bottom:none;
+  }
+
+textarea {
+  width: 280px;
+  height: 110px;
+  max-height: 110px;
+  padding: 15px;
+  background: transparent;
+  outline: none;
+  color: #726659;
+  border: solid 1px #b3aca7;
+  resize: none !important;
+}
+.container .infos2 {
+  margin-left: 160px;
+  margin-top: -120px;
+  margin-right: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+  }
