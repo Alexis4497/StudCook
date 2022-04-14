@@ -7,6 +7,11 @@
     <div class="container mt-4">
 
         <h1>Gérer les recettes</h1>
+        
+        <div class="text-right">
+            <a href="{{ path('recette.create') }}" class="btn btn-primary">Ajouter une nouvelle Recette</a>
+
+        </div>
 
         <table class="table table-striped"
             <thead>
@@ -22,13 +27,17 @@
                     <td>{{ r.titreRecette }}</td>
                     <td>
                         <a href="{{ path('edit', {id: r.id}) }}" class="btn btn-secondary">Editer</a>
+                        <form method="post" action="{{ path('delete', {id: r.id}) }}" style="display:inline-block">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger"> Supprimer </button>
+                        </form>
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
-    </div>
 
+        
 
      
                
