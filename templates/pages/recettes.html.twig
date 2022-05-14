@@ -4,7 +4,7 @@
 
  {% block body %}
 
-       <div class="container">
+       <div class="container">       
             <h2>Les dernières recettes</h2>
             <div class="row flex">
                 {% for r in recettes %}
@@ -14,7 +14,9 @@
                                 <h5 class="card-title">
                                     <a href="{{ path('show', {id: r.id}) }}">{{ r.titreRecette}}</a>
                                 </h5>
+                                    
                                     <iframe class="video-recettes" src={{r.lienVideo}}></iframe>
+                                    
 
                                         <p class="card-text">{{ r.descriptionRecette}}</p>
                                         <div class="text-primary">{{ r.prixRecette |  number_format(2, ',', ' ') }} €</div>
@@ -25,6 +27,6 @@
             </div>
         </div>
 
-      
+     
 {% endblock %}
 

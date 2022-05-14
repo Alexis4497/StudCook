@@ -5,6 +5,8 @@ namespace App\Entity;
 
 use App\Repository\RecettesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 // use Cocur\Slugify\Slugify;
 
 
@@ -12,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=RecettesRepository::class)
+ * @UniqueEntity("title")
  */
 class Recettes
 {
@@ -24,6 +27,7 @@ class Recettes
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=5, max=250)
      */
     private $titreRecette;
 
@@ -34,6 +38,7 @@ class Recettes
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\Range(min=0.50,max=10.00)
      */
     private $prixRecette;
 
@@ -90,12 +95,12 @@ class Recettes
 
     public function getLienVideo(): ?string
     {
-        return $this->lien_video;
+        return $this->lien_video ;
     }
 
     public function setLienVideo(string $lien_video): self
     {
-        $this->lien_video = $lien_video;
+        $this->lien_video = $lien_video. "embed";
 
         return $this;
     }

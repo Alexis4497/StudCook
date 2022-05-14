@@ -49,6 +49,7 @@ class AdminController extends AbstractController{
          {
              $this->em->persist($recette);
              $this->em->flush();
+             $this->addFlash('success','Votre recette a été créée avec succès !');
              return $this->redirectToRoute('admin');
          }
 
@@ -74,6 +75,7 @@ class AdminController extends AbstractController{
         if($form->isSubmitted() && $form->isValid())
         {
             $this->em->flush();
+            $this->addFlash('success','Votre recette a été modifiée avec succès !');
             return $this->redirectToRoute('admin');
 
         }
@@ -93,6 +95,7 @@ class AdminController extends AbstractController{
        {
             $this->em->remove($recette);
             $this->em->flush();
+            $this->addFlash('success','Votre recette a été supprimée avec succès !');
             return $this->redirectToRoute('admin');
        }
 

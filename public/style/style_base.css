@@ -125,7 +125,10 @@ body {
 
     display: block;
     float: right;
-    margin-right: 15%;
+    margin-right: 25%;
+    border:0;
+    
+
      }
 
   .description-video{

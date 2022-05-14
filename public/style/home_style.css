@@ -1,12 +1,4 @@
-body {
-    background: #eee;
-    font-family: Tahoma;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    padding-top: 20px;
-  }
+
   .d-block, h2{
     color: #33475c;
     font-weight: 700;

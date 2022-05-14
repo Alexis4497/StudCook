@@ -7,6 +7,15 @@
     <div class="container mt-4">
 
         <h1>Gérer les recettes</h1>
+
+
+        {% for message in app.flashes('success') %}
+
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+            
+        {% endfor %}
         
         <div class="text-right">
             <a href="{{ path('recette.create') }}" class="btn btn-primary">Ajouter une nouvelle Recette</a>
@@ -27,7 +36,9 @@
                     <td>{{ r.titreRecette }}</td>
                     <td>
                         <a href="{{ path('edit', {id: r.id}) }}" class="btn btn-secondary">Editer</a>
-                        <form method="post" action="{{ path('delete', {id: r.id}) }}" style="display:inline-block">
+                        <form method="post" action="{{ path('delete', {id: r.id}) }}" style="display:inline-block" 
+                        onsubmit="return confirm('Êtes vous vraiment sûr de vouloir supprimer cette recette ?')">
+                        
                             <input type="hidden" name="_method" value="DELETE">
                             <button class="btn btn-danger"> Supprimer </button>
                         </form>
