@@ -3,12 +3,16 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Repository\RecettesRepository;
 use App\Entity\Recettes;
+use App\Entity\RecettesSearch;
+use App\Form\RecettesSearchType;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\Persistence\ManagerRegistry;
+
 
 class RecettesController extends AbstractController
 {
@@ -22,11 +26,16 @@ class RecettesController extends AbstractController
      */
    
 
-    public function recettes(RecettesRepository $repository)
+    public function recettes(RecettesRepository $repository, Request $request)
     {
-      
+      $search = new RecettesSearch();
+      $form = $this->createForm(RecettesSearchType::class, $search);
+      $form->handleRequest($request);
+
         return $this->render('pages/recettes.html.twig', [
-            'recettes' => $repository -> findAll([]) 
+            'recettes' => $repository -> findAll([]),
+            'form' => $form->createView()
+
         ]);
     }
 

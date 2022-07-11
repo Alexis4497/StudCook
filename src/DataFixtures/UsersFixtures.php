@@ -25,8 +25,8 @@ class UsersFixtures extends Fixture
     {
         $user = new Users();
         $user->setGrade(1);
-        $user->setLogin('admin');
-        $user->setPassword($this->passwordHasher->hashPassword($user, $user->getPassword()));
+        $user->setLogin('demo');
+        $user->setPassword($this->passwordHasher->hashPassword($user, 'demo'));
         $manager->persist($user);
         $manager->flush();
     }

@@ -149,12 +149,12 @@ class Users implements UserInterface,\Serializable
         ) = unserialize($serialized, ['allowed_classes' => false]);
     }
 
-    public function getUsername()
+    public function getUsername(): string 
     {
-        
+        return $this->login;
     }
-    public function getUserIdentifier()
+    public function getUserIdentifier():string 
     {
-        
+       return $this->password;
     }
 }

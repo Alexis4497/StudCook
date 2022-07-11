@@ -3,8 +3,11 @@
 namespace App\Repository;
 
 use App\Entity\Recettes;
+use App\Entity\RecettesSearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @method Recettes|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,6 +22,29 @@ class RecettesRepository extends ServiceEntityRepository
         parent::__construct($registry, Recettes::class);
     }
 
+    /**
+     * @return Query
+     */
+
+
+    public function findAllVisibleQuery(RecettesSearch $search)
+    {
+        $query = $this->findVisibleQuery();
+
+        if ($search->getMaxPrice()) {
+            $query = $query
+             ->where('r.prixRecette <= :maxprice')
+             ->setParameter('maxprice', $search->getMaxPrice());
+        }
+
+        if ($search->getMinPrice()) {
+            $query = $query
+             ->where('r.prixRecette >= :minprice' )
+             ->setParameter('minprice', $search->getMinPrice());
+        }
+
+        return $query->getQuery();
+    }
     // /**
     //  * @return Recettes[] Returns an array of Recettes objects
     //  */
