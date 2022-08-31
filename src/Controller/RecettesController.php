@@ -40,15 +40,19 @@ class RecettesController extends AbstractController
 
     public function index(PaginatorInterface $paginator, Request $request): Response
     {
+      $search = new RecettesSearch();
+      $form = $this->createForm(RecettesSearchType::class, $search);
+      $form->handleRequest($request);
       $recettes = $paginator->paginate(
-        $this->repository->findAllVisibleQuery(),
+        $this->repository->findAllVisibleQuery($search),
         $request->query->getInt('page', 1),
         12
     );
 
       return $this->render('pages/recettes.html.twig', [
         'current_menu' => 'recettes',
-        'recettes' => $recettes
+        'recettes' => $recettes,
+        'form' => $form->createView()
       ]);
     }
 

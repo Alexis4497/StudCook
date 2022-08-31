@@ -29,10 +29,24 @@ class RecettesRepository extends ServiceEntityRepository
     /**
      * @return Query
     */
-    public function findAllVisibleQuery()
+    public function findAllVisibleQuery(RecettesSearch $search)
     {
-        return $this->findVisibleQuery()
-            ->getQuery();
+        $query = $this->findVisibleQuery();
+
+        if ($search->getMaxPrice()) {
+            $query = $query
+             ->andwhere('r.prixRecette <= :maxprice')
+             ->setParameter('maxprice', $search->getMaxPrice());
+        }
+    
+        if ($search->getMinPrice()) {
+            $query = $query
+             ->andwhere('r.prixRecette >= :minprice' )
+             ->setParameter('minprice', $search->getMinPrice());
+        }
+
+
+        return $query->getQuery();
     }
     
 

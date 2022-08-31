@@ -1,15 +1,19 @@
 <?php
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 class RecettesSearch{
 
     /**
      * @var int|null
+     * @Assert\Range(min=0.50, max=20)
      */
     private $maxPrice;
 
     /**
      * @var int|null
+     * @Assert\Range(min=0.50, max=20)
      */
     private $minPrice;
 

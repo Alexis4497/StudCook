@@ -41,6 +41,8 @@ class RecettesSearchType extends AbstractType
         ]);
     }
 
+    /**Pour rendre l'URL plus propre */
+    
     public function getBlockPrefix() {
         return '';
     }
