@@ -10,12 +10,15 @@ use App\Repository\RecettesRepository;
 use App\Entity\Recettes;
 use App\Entity\RecettesSearch;
 use App\Form\RecettesSearchType;
+use Knp\Component\Pager\PaginatorInterface;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\Persistence\ManagerRegistry;
 
 
 class RecettesController extends AbstractController
 {
+    
+    private $repository;
       
     /**
      * Class RecettesController
@@ -24,19 +27,29 @@ class RecettesController extends AbstractController
      * @Route("/recettes", name="recettes")
      * @return Response
      */
+
+     public function __construct(RecettesRepository $repository)
+     {
+        $this->repository = $repository;
+     }
    
+     /**
+      * @Route ("/recettes", name="recettes.index")
+      * @return Response
+      */
 
-    public function recettes(RecettesRepository $repository, Request $request)
+    public function index(PaginatorInterface $paginator, Request $request): Response
     {
-      $search = new RecettesSearch();
-      $form = $this->createForm(RecettesSearchType::class, $search);
-      $form->handleRequest($request);
+      $recettes = $paginator->paginate(
+        $this->repository->findAllVisibleQuery(),
+        $request->query->getInt('page', 1),
+        12
+    );
 
-        return $this->render('pages/recettes.html.twig', [
-            'recettes' => $repository -> findAll([]),
-            'form' => $form->createView()
-
-        ]);
+      return $this->render('pages/recettes.html.twig', [
+        'current_menu' => 'recettes',
+        'recettes' => $recettes
+      ]);
     }
 
     /**

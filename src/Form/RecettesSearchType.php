@@ -28,6 +28,7 @@ class RecettesSearchType extends AbstractType
                     'placeholder' => 'Prix minimum'
                 ]
             ])
+            
         ;
     }
 

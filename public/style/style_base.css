@@ -131,6 +131,14 @@ body {
 
      }
 
+.images_recette{
+  display: block;
+  width: 300px;
+  height: 280px;
+  margin-left: -15px;
+
+}
+
      iframe{
       margin-top: -50px;
       width: 400px; 

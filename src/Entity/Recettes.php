@@ -47,6 +47,12 @@ class Recettes
      */
     private $lien_video;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image_recette;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -101,6 +107,18 @@ class Recettes
     public function setLienVideo(string $lien_video): self
     {
         $this->lien_video = $lien_video. "embed";
+
+        return $this;
+    }
+
+    public function getImageRecette(): ?string
+    {
+        return $this->image_recette;
+    }
+
+    public function setImageRecette(string $image_recette): self
+    {
+        $this->image_recette = $image_recette;
 
         return $this;
     }
