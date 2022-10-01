@@ -66,14 +66,14 @@
               </div>
             
           </div>
-          <div class="card__img"> <img class="img_recette" src={{r.getImageRecette() }}></img></div>
+          <div class="card__img"> <img class="img_recette"  src={{r.getImageRecette() }} ></img></div>
           <a href="#" class="card_link">
              <div class="card__img--hover"></div>
            </a>
           <div class="card__info">
             <span class="card__date"> Ajouté le 19/08/2022</span>
             <h3 class="card__title"> <a href="{{ path('show', {id: r.id}) }}">{{ r.titreRecette}}</h3>
-            <span class="card__price"><a href="#" class="card__author" title="author">{{ r.prixRecette |  number_format(2, ',', ' ') }} €</a></span>
+            <span class="card__price"><a class="card__author" title="author">{{ r.prixRecette |  number_format(2, ',', ' ') }} €</a></span>
           </div>
         </article>
 

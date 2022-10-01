@@ -1,37 +1,70 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nos Bons Plans{% endblock %}
+{% block head %}
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% block title %}Nos Bons Plans{% endblock %}
+   {% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('style/bonsplans_style.css') }}">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link
+   rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+   integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+   crossorigin="anonymous"
+  />
+  {% endblock %}
+   {% block javascripts %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+{% endblock %}
+    
+    </head>
+    
+{% endblock %}
 
  {% block body %}
 
-       <div class="container">
-           <div class="class_typewrite">
-                <h1>
-                    <a id="type_writer"class="typewrite" data-period="2000" data-type='[ "Bienvenue sur nos Bons Plans !" ]'>
-                        <span class="wrap"></span>
-                    </a>
-                </h1>
-            </div>
-
-            <div class="row flex">
+        
+      <div class="container">
+        
+            
                 {% for b in bonsplans %}
-                    <div class="col-3">
-                        <div>
-                            <div class ="card-body">
-                                <h5 class="card-title">
-                                    {# {{b.id}} #} {{ b.nomBonPlan }}
-                                </h5>
-                                    <img class="img_bonsplans" src={{ b.getLienImageBonPlan() }}></img>
- 
+            
+     
+        <div class ="card-body">
+                               
 
-                                        <p class="card-text">{{ b.description}}</p>
-                                        <div class="text-primary"> <a href="{{b.lienBonPlan}}">{{b.lienBonPlan}}</a></div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+         <img class="img_bonsplans" src={{ b.getLienImageBonPlan() }}></img>
+
+            <div class="container__text">
+
+                 <h5 class="card-title">{{ b.nomBonPlan }}</h5>
+
+            <div class="container__text__star">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
             </div>
-        </div>
 
+            <p class="card-text">{{ b.description}}</p>
+
+                <a href="{{b.lienBonPlan}}" target="_blank"><button class="btn">En savoir plus<i class="fa fa-arrow-right"></i></button></a>
+            
+            </div>
+            </div>
+      {% endfor %}
+    </div>
+    
+    
+
+    
+    
       
+
 {% endblock %}
