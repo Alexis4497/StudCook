@@ -1,175 +1,114 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css2?family=Andika&family=Julius+Sans+One&display=swap');
 
 
-
-.cards {
-    width: 100%;
-    height: 100%;
-    display:flex;
-    flex-wrap: wrap;
-    display: -webkit-flex;
-    justify-content: center;
-    -webkit-justify-content: center;
-    -webkit-align-items: center;
-    align-items: center; 
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Julius Sans One', sans-serif;
+  margin-bottom:20px;
 }
-h2 {
-  color: black;;
+.container{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  z-index:2;
+  height:auto;
 }
-a {
-  font-weight:light;
-  color:#2fc054;
+.container .card{
+  vertical-align:top;
+  width:280px;
+  height:450px;
+  position:relative;
+  margin:30px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+  border-radius:25px;
+  background-color:rgba(255,255,255, 0.1);
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  backdrop-filter:blur(5px);
+  text-align:center;
 }
-
-a:hover{
-  font-weight: bolder;
-  color: #6acc82 ;
-  text-decoration: none;
+.card .content{
+  padding:20px;
+  transition:0.8s all ease;
+  color:black;
 }
-
-.card__clock {
-    width: 15px;
-  vertical-align: middle;
-    fill: white;
+.card:hover .content{
+  transform:translateY(0px);
+  opacity:1;
 }
-.card__time {
-    font-size: 12px;
-    color: white;
-    vertical-align: middle;
-    margin-left: 5px;
-}
-
-.card__clock-info {
-    float: right;
-}
-
-.card__img {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    max-width: auto;
-    max-height: 300px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+.card img{
+  position:absolute;
+  width:300px;
+  height: 250px;
+  top:0px;
+  z-index:-1;
 }
 
-.card__info-hover {
-    position: absolute;
-    padding: 16px;
-    width: 100%;
-    opacity: 0;
-    top: 0;
-}
-
-.card__img--hover {
-  transition: 0.2s all ease-out;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-  position: absolute;
-    height: 235px;
-  border-top-left-radius: 12px;
-border-top-right-radius: 12px;
-top: 0;
-}
-.card {
-  width: 300px;
-  height: 500px;
-  margin-top: 20px;
-  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
-  background-color: #fff;
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
-}
-.card:hover {
-  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-    transform: scale(1.10, 1.10);
-}
-
-.card__info {
-z-index: 2;
-  background-color: #fff;
-  border-bottom-left-radius: 12px;
-border-bottom-right-radius: 12px;
-   padding: 16px 24px 24px 24px;
-}
-
-.card__date {
-    font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    color:black;
-}
-
-.card__title {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-family: 'Roboto Slab', serif,  ;;
-    
-}
-
-.card__price {
-    font-size: 18px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    text-align: center;
-}
-
-.card__author {
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    color: #32BE58;
-}
-
-.card:hover .card__img--hover {
-    height: 100%;
-    opacity: 0.3;
-}
-
-.card:hover .card__info {
-    background-color: transparent;
-    position: relative;
-}
-
-.card:hover .card__info-hover {
-    opacity: 1;
-}
-
-.img_recette{
-  width: 300px;
-  height: 280px;
- 
-}
-
-
-.col-md-2{
-  border:0; 
-  color: #f6931f; 
-  text-align:center; 
-  font-weight: bold;
-}
-
-.btn-primary{
-  color:#fff;
-  border-color: #32BE58;
+.hover-img{
+  display:inline-block;
+  text-decoration:none;
+  padding:8px 30px 11px;
+  border:2px solid #32BE58;
   background-color: #32BE58;
+  text-transform:uppercase;
+  color:black;
+  border-radius:50px;
+  box-shadow: 0px 5px 50px rgba(0,0,0,0.8);
+  transition:0.8s all ease;
+  transform:translateY(200px);
+  opacity:0;
+}
+.card:hover .hover-img{
+  transform:translateY(275px);
+  opacity:1;
 }
 
-.btn-primary:hover{
-  background-color:#6acc82;
-  border-color: #32BE58;
+h1{
+  color:black;
+  text-align:center;
+  z-index:9;
+  position:relative;
+  margin-bottom:50px;
+  padding-bottom:0;
+  padding-top:20px;
+  font-weight:400;
 }
-
-
+.card .content h2{
+  color:black;
+  font-weight:600;
+  font-size: 20px;
+  margin-top: 220px;
+  margin-bottom: 0px;
   
+}
 
+.card .content a{
+  display:inline-block;
+  margin-top:0px;
+  margin-bottom: 50px;
+  text-decoration:none;
+  padding:8px 30px 11px;
+  border:2px solid #32BE58;
+  text-transform:uppercase;
+  color:black;
+  border-radius:50px;
+  box-shadow: 0px 5px 50px rgba(0,0,0,0.8);
+  transition:0.8s all ease;
+}
+.card .content a:hover{
+  background: #32BE58;
+}
+
+
+
+@media only screen and (max-width:900px) {
+  .container{
+    display:block;
+  }
+}
 
 
 
