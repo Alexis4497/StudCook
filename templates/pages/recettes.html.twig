@@ -58,7 +58,7 @@
             {% for r in recettes %}
             <div class="col-4">
             <div class="card">
-                <a class="hover-img" href="{{ path('show', {id: r.id}) }}">Voir la Recette</a><img src={{r.getImageRecette() }}>
+                <a class="hover-img" href="{{ path('show', {id: r.id}) }}">Voir la Recette</a><img src="/assets/recettes/{{ recettes.filename }}">
                 <div class="content">
                 <h2>{{ r.titreRecette}}</h2>
                 <a href="#">{{ r.prixRecette |  number_format(2, ',', ' ') }} €</a>

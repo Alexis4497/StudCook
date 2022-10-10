@@ -1,9 +1,35 @@
 {% extends 'base.html.twig' %}
 
-    {% block title %}Test page show{% endblock %}
+    {% block head %}
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+            <title>Show Test</title>
+
+            {% block title %}Nos Recettes{% endblock %}
+
+             {% block stylesheets %}
+
+          <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+          <link rel="stylesheet" href="{{ asset('style/show_style.css') }}">
+
+        {% endblock %}
+        
+    
+        {% block javascripts %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+        
+
+    </head>
+    {% endblock %}
+{% endblock %}
+
 
  {% block body %}
-
 
     {# <h1> {{monid}} </h1> #}
    
@@ -14,7 +40,7 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-8">
-                 <iframe src={{r.lienVideo}}></iframe>
+                 <iframe src={{r.lienVideo}} frameborder="0"></iframe>
             </div>
             <div class="col-md-4">
                 <h1> {{ r.titreRecette }}</h1>

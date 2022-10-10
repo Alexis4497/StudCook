@@ -110,7 +110,17 @@ h1{
   }
 }
 
+.btn-primary {
+  background-color: #32BE58;
+  border-color: #307a43;
+}
+.btn-primary:active {
+  background-color:#307a43;
+}
 
+.btn-primary:hover {
+  background-color:#307a43;
+}
 
 /*************************Pagination*******************************/
 

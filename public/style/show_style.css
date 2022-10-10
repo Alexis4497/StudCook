@@ -1,0 +1,19 @@
+  /* Style Vidéos */
+     iframe{
+      margin-top: -50px;
+      width: 400px; 
+      height: 550px;
+     }
+
+    iframe .Header{
+        visibility: hidden;
+     }
+
+  .description-video{
+
+    display: block;
+    text-align:justify ;
+    margin-left: 10%;
+    margin-right: 40%;
+    margin-bottom: 10%;
+  }
