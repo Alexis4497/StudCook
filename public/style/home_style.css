@@ -9,4 +9,11 @@
     padding-bottom: 20px;
   }
   
-  
+  #ban{
+    width: 60%;
+    height: 600px;
+    justify-content: center;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }

@@ -66,9 +66,6 @@ class RecettesController extends AbstractController
        
         $monid = $recettes -> getId();
 
-
-
-
         return $this->render('pages/show.html.twig', [
             'monid'=> $recettes -> getId(),
             'recettes' => $repository -> findAll([]), 

@@ -60,7 +60,20 @@ h1, h2, h3, h4, h5, h6{
   transition:0.8s all ease;
   transform:translateY(200px);
   opacity:0;
+  z-index:1;
+  
 }
+a.hover-img{
+  text-decoration: none;
+  
+}
+
+a:hover.hover-img{
+  text-decoration: none;
+  color:#307a43;
+  
+}
+
 .card:hover .hover-img{
   transform:translateY(275px);
   opacity:1;
