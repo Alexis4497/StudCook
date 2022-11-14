@@ -17,8 +17,10 @@
         {% endblock %}
     </head>
     <body>
-      
-        <img class="logo" src="../assets/Logo.PNG" alt="logo-studcook">
+            <div class="logo">
+            <a href="{{ path('home') }}">
+            <img class="logo" src="../assets/Logo.PNG" alt="logo-studcook">
+            </div>
          {% if app.user %}
         <div class="active-user">
           <img class="img-active-user" src="../assets/icon-user-green.png" alt="icon-user">{{ app.user.username}}
@@ -26,14 +28,15 @@
          {% endif %}
         <nav class="stroke">
           <ul>
+            {% if app.user %}
+            <li><a href="{{ path('admin') }}">Gérer les Recettes</a></li>
+            <li><a href="{{ path('logout') }}">Se Déconnecter</a></li>
+            {% else %}
+            <li><a href="{{ path('login') }}">Se Connecter</a></li>
             <li><a href="{{ path('home') }}">Accueil</a></li>
             <li><a {% if current_menu is defined and current_menu == 'recettes' %} active {% endif %} href="{{ path('recettes') }}">Nos Recettes</a></li>
             <li><a href="{{ path('bonsplans') }}">Nos Bons Plans</a></li>
             <li><a href="{{ path('contact.index') }}">Nous Contacter</a></li>
-            {% if app.user %}
-            <li><a href="{{ path('logout') }}">Se Déconnecter</a></li>
-            {% else %}
-            <li><a href="{{ path('login') }}">Se Connecter</a></li>
             {% endif %}
           </ul>
           

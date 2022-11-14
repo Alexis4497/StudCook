@@ -61,10 +61,6 @@ class Recettes
      */
     private $lien_video;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $image_recette;
 
     /**
      * @var datetime|null
@@ -131,17 +127,7 @@ class Recettes
         return $this;
     }
 
-    public function getImageRecette(): ?string
-    {
-        return $this->image_recette;
-    }
 
-    public function setImageRecette(string $image_recette): self
-    {
-        $this->image_recette = $image_recette;
-
-        return $this;
-    }
 
     /**
      * Get the value of filename

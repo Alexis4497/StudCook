@@ -406,8 +406,24 @@ textarea {
   display: flex;
   margin-right: 20px;
   float: right;
+  
 }
 .img-active-user{
   width: 50px;
   height: auto;
+  margin-top: -10px;
+  margin-right: 5px;
+}
+
+.btn-primary {
+  background-color: #32BE58;
+  border-color: #307a43;
+}
+
+.btn-primary:active {
+  background-color:#307a43;
+}
+
+.btn-primary:hover {
+  background-color:#307a43;
 }

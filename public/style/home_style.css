@@ -17,3 +17,106 @@
     margin: 0 auto;
     text-align: center;
   }
+
+  
+#img-apropos{
+  float: left;
+  width:65%;
+  height:auto;
+  margin-left: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  vertical-align: middle;
+}
+
+#text-apropos p{
+  margin-left: 5%;
+  margin-right:5% ;
+  text-align: center;
+  font-size: 25px;
+  margin-top:10%;
+}
+#text-apropos{
+  display: block;
+  float: right;
+  position: relative;
+}
+
+#text-objectif p{
+margin-left: 5%;
+text-align: center;
+font-size: 25px;
+margin-top:10%;
+}
+
+#text-objectif{
+  display: block;
+  float: right;
+  position: relative;
+}
+
+#img-objectif{
+  width: 70%;
+  height: auto;
+  float: right;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  vertical-align: middle;
+}
+
+.container {
+  border-radius: 20px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+}
+
+#text-nutritionniste p{
+  margin-left: -30%;
+  margin-right:5% ;
+  text-align: center;
+  font-size: 25px;
+  margin-top:13%;
+  }
+  
+  #text-nutritionniste{
+    display: block;
+  float: right;
+  position: relative;
+  }
+
+  #img-nutritionniste{
+    float: left;
+    width:40%;
+    height:auto;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    vertical-align: middle;
+  }
+
+  #text-entreprises p{
+    margin-left: 15%;
+    margin-right:5% ;
+    text-align: center;
+    font-size: 25px;
+    margin-top:25%;
+    }
+    
+    #text-entreprises{
+    display: block;
+    float: left;
+    position: relative;
+    text-align: center;
+    }
+  
+    #img-entreprises{
+      float: left;
+      width:70%;
+      height:auto;
+      margin-left: 15%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      vertical-align: middle;
+    }
