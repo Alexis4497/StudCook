@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+ {% block body %}
+
+    <div class="container">
+
+        <h1>Editer un bon plan</h1>
+
+            {{ form_start(form) }}
+
+                {{ form_rest(form) }}
+                <button class="btn btn-primary">Sauvegarder</button>
+
+            {{ form_end(form) }}
+
+    </div>
+       
+{% endblock %}

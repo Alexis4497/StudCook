@@ -1,4 +1,4 @@
-$(function()
+(function()
 {
     function after_form_submitted(data) 
     {

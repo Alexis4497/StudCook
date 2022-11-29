@@ -54,11 +54,17 @@ class RecettesRepository extends ServiceEntityRepository
 
      private function findVisibleQuery()
      {
-        return $this->createQueryBuilder('r');
+        return $this->createQueryBuilder('r')
+                     ->orderBy('r.updated_at','DESC');
        
      }
 
+    private function lastReceipe()
+    {
+        
+    }
 
+    
    
 }
   

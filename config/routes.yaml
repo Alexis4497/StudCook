@@ -20,7 +20,7 @@ show:
 
 admin:
   path: /admin
-  controller:  App\Controller\Admin\AdminController::admin
+  controller: App\Controller\Admin\AdminController::admin
 
 edit:
   path: /edit/{id}
@@ -32,6 +32,16 @@ logout:
 login:
   path: /login
   controller: App\Controller\SecurityController::login
+
+adminbonsplans:
+  path: /adminbonsplans
+  controller: App\Controller\Admin\AdminBonsPlansController::adminbonsplans
+
+adminbonsplansedit:
+  path: /adminbonsplans/{id}
+  controller: App\Controller\Admin\AdminBonsPlansController::editbonsplans
+
+
 
 
 

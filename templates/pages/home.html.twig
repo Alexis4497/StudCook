@@ -11,6 +11,13 @@
           <link rel="stylesheet" href="{{ asset('style/home_style.css') }}">
 
         {% endblock %}
+
+         {% block javascripts %}
+
+            
+            <script src ="{{ asset('style/js/home-transition.js') }}" defer></script>
+
+         {% endblock %}
         
     </head>
 
@@ -18,8 +25,10 @@
 
 
  {% block body %}
+
  
-  <div class="container">
+ 
+  <div class="container reveal">
     <div class="row">
       <div class="col">
         <img id="img-apropos" src="../assets/a-propos-croquis.png" alt="img-apropos">
@@ -37,7 +46,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container reveal">
     <div class="row">
         <div id="text-objectif" class="col">
           <p>– Partager des idées de recettes, facile à faire et à faible coût</br>
@@ -51,7 +60,7 @@
       </div>
     </div>
 
-     <div class="container">
+     <div class="container reveal">
     <div class="row">
       <div class="col">
         <img id="img-nutritionniste" src="../assets/nutritionniste.png" alt="img-nutritionniste">
@@ -63,7 +72,7 @@
     </div>
   </div>
 
-   <div class="container">
+   <div class="container reveal">
     <div class="row">
         <div id="text-entreprises" class="col">
           <p>Ces marques nous on soutenu dans notre projet, un grand merci à eux ! </br>
@@ -89,6 +98,7 @@
     </div> -->
 
 
-    <script src ="{{ asset('style/js/carousel.js') }}"></script>
+   
+
 
 {% endblock %}

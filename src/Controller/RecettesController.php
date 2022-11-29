@@ -72,4 +72,5 @@ class RecettesController extends AbstractController
             'current_menu' => 'show'
         ]);
     }
+    
 }
