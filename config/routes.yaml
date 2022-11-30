@@ -41,6 +41,14 @@ adminbonsplansedit:
   path: /adminbonsplans/{id}
   controller: App\Controller\Admin\AdminBonsPlansController::editbonsplans
 
+adminmarques:
+  path: /adminmarques
+  controller: App\Controller\Admin\AdminMarquesController::adminmarques
+
+adminmarquesedit:
+  path: /adminmarques/{id}
+  controller: App\Controller\Admin\AdminMarquesController::editMarques
+
 
 
 

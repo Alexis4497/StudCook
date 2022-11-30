@@ -72,8 +72,8 @@ color: black;
   margin-top: 5%;
   margin-bottom: 5%;
   box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
-  border: 1px solid #32BE58;
   font-style: black;
+  width: 80%;
 }
 
 #text-nutritionniste p{
@@ -137,3 +137,85 @@ color: black;
       transform: translateY(0);
       transition: 1.75s  cubic-bezier(.5, 0, 0, 1);
     }
+
+    /*******************************************Style slider Marques**********************************************/
+    #text-marques{
+      display:block;
+      font-size: 25px;
+      color: black;
+      position: relative;
+      text-align: center;
+      margin-top: 2%;
+      margin-bottom: 5%;
+      
+    }
+    .container-marques{
+      border-radius: 20px;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+      font-style: black;
+      align-items: center;
+      background: #E3E3E3;
+      display: flex;
+      justify-content: center;
+      width: 70%;
+      margin-left: 15%;
+    }
+    
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+     }
+      100% {
+        transform: translateX(calc(-250px * 7));
+     }
+   }
+    .slider {
+      background: white;
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+      height: 300px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      
+      
+   }
+    .slider::before, .slider::after {
+      background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      content: "";
+      height: 100px;
+      position: absolute;
+      width: 200px;
+      z-index: 2;
+      margin-right: 50px;
+      margin-left: 50px;
+   }
+    .slider::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+     
+   }
+    .slider::before {
+      left: 0;
+      top: 0;
+      
+   }
+    .slider .slide-track {
+      animation: scroll 40s linear infinite;
+      display: flex;
+      width: calc(250px * 14);
+   }
+    .slider .slide {
+      height: 100px;
+      width: 250px;
+      margin-right: 50px;
+      margin-left: 50px;
+   }
+
+   .img-marques{
+    height:100px;
+    width:250px;
+   }
+    

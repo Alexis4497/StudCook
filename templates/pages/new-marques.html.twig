@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+ {% block body %}
+
+    <div class="container">
+
+        <h1>Créer une nouvelle marque</h1>
+
+            {{ form_start(form) }}
+
+                {{ form_rest(form) }}
+                
+                <button class="btn btn-primary">Créer</button>
+
+            {{ form_end(form) }}
+
+    </div>
+       
+{% endblock %}

@@ -71,34 +71,28 @@
       </div>
     </div>
   </div>
-
-   <div class="container reveal">
-    <div class="row">
-        <div id="text-entreprises" class="col">
-          <p>Ces marques nous on soutenu dans notre projet, un grand merci à eux ! </br>
-            N'hésitez pas à nous contacter pour faire partie de l'aventure Studcook !
-          </p>
-        </div>
-         <div class="col">
-          <img id="img-entreprises" src="../assets/logos-entreprisescroquis.png" alt="img-entreprises">
-        </div>
-      </div>
+  
+  
+  <div class="container-marques reveal">
+  
+ 
+  
+    <div class="slider">
+    <div id="text-marques">
+    <p> Un grand merci à ces marques qui soutiennent le projet StudCook ! </p>
     </div>
-
-
-
-
-  <!--
-    <div class="jumbotron text-center">
+	    <div class="slide-track">
+        {% for m in marques %}
         
-          <video autoplay muted loop width="1250" height="560">
-     <source src="../assets/video_presentation.mp4" type="video/mp4">
-    </video>
-        
-    </div> -->
+		      <div class="slide">
+           
+			      <img class="img-marques" src={{ m.getLienImageMarque() }}></img>
+  	      </div>
+        {% endfor %}
+	    </div>
+   </div>
+  </div>
 
-
-   
 
 
 {% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Marques{% endblock %}
+
+ {% block body %}
+ 
+    <div class="container mt-4">
+
+        <h1>Gérer les Marques</h1>
+
+        {% for message in app.flashes('success') %}
+
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+            
+        {% endfor %}
+        
+        <div class="text-right">
+            <a href="{{ path('adminmarquescreate') }}" class="btn btn-primary">Ajouter une nouvelle marque</a>
+
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+             {% for m in adminmarques %}
+                <tr>
+                    <td>{{ m.nomMarque }}</td>
+                    <td>
+                        <a href="{{ path('adminmarquesedit', {id: m.id}) }}" class="btn btn-secondary">Editer</a>
+                        <form method="post" action="{{ path('deletemarque', {id: m.id}) }}" style="display:inline-block" 
+                            onsubmit="return confirm('Êtes vous vraiment sûr de vouloir supprimer cette marque ?')">
+                            
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-danger"> Supprimer </button>
+                            </form>
+                    </td>
+                </tr>
+              
+            {% endfor %}
+            </tbody>
+        </table>
+
+        
+
+     
+               
+      
+{% endblock %}
+
