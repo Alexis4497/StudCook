@@ -45,6 +45,7 @@ class AdminMarquesController extends AbstractController{
 
         if ($form->isSubmitted() && $form->isValid()){
             $this->em->flush();
+            $this->addFlash('success','Votre marque a été modifiée avec succès !');
             return $this->redirectToRoute('adminmarques');
         }
 
@@ -68,6 +69,7 @@ class AdminMarquesController extends AbstractController{
         if ($form->isSubmitted() && $form->isValid()){
             $this->em->persist($marque);
             $this->em->flush();
+            $this->addFlash('success','Votre marque a été créée avec succès !');
             return $this->redirectToRoute('adminmarques');
         }
         return $this->render('pages/new-marques.html.twig',[

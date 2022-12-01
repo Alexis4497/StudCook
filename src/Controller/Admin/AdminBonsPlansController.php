@@ -45,6 +45,7 @@ class AdminBonsPlansController extends AbstractController{
 
         if ($form->isSubmitted() && $form->isValid()){
             $this->em->flush();
+            $this->addFlash('success','Votre bon plan a été modifié avec succès !');
             return $this->redirectToRoute('adminbonsplans');
         }
 
@@ -68,6 +69,7 @@ class AdminBonsPlansController extends AbstractController{
         if ($form->isSubmitted() && $form->isValid()){
             $this->em->persist($bonplan);
             $this->em->flush();
+            $this->addFlash('success','Votre bon plan a été créé avec succès !');
             return $this->redirectToRoute('adminbonsplans');
         }
         return $this->render('pages/new-bonsplans.html.twig',[

@@ -10,6 +10,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=MarquesRepository::class)
+ * @Vich\Uploadable()
  */
 class Marques
 {
@@ -21,14 +22,25 @@ class Marques
     private $id;
 
     /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255)
+     */
+    private $filenameMarque;
+    /**
+     * @var File|null
+     * @Vich\UploadableField(mapping="image_marque", fileNameProperty="filenameMarque")
+     */
+    private $imageFileMarque;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $nomMarque;
 
-     /**
-     * @ORM\Column(type="string", length=255)
+    /**
+     * @ORM\Column(type="datetime")
      */
-    private $lien_image_marque;
+    private $marque_updated_at;
 
     public function getId(): ?int
     {
@@ -46,13 +58,66 @@ class Marques
 
         return $this;
     }
-    public function getLienImageMarque(): ?string
+   
+    /**
+     * Get the value of filenameMarque
+     *
+     * @return  string|null
+     */ 
+    public function getFilenameMarque()
     {
-        return $this->lien_image_marque;
+        return $this->filenameMarque;
     }
-    public function setLienImageMarque($LienImageMarque): self
+
+    /**
+     * Set the value of filenameMarque
+     *
+     * @param  string|null  $filenameMarque
+     *
+     * @return  self
+     */ 
+    public function setFilenameMarque($filenameMarque)
     {
-        $this->LienImageMarque = $LienImageMarque;
+        $this->filenameMarque = $filenameMarque;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of imageFileMarque
+     *
+     * @return  File|null
+     */ 
+    public function getImageFileMarque()
+    {
+        return $this->imageFileMarque;
+    }
+
+    /**
+     * Set the value of imageFileMarque
+     *
+     * @param  File|null  $imageFileMarque
+     *
+     * @return  self
+     */ 
+    public function setImageFileMarque($imageFileMarque)
+    {
+        $this->imageFileMarque = $imageFileMarque;
+        if ($this->imageFileMarque instanceof UploadedFile) {
+            $this->marque_updated_at = new \DateTime('now');
+        }
+
+        return $this;
+    }
+
+    public function getMarqueUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->marque_updated_at;
+    }
+
+    public function setMarqueUpdatedAt(\DateTimeInterface $marque_updated_at): self
+    {
+        $this->marque_updated_at = $marque_updated_at;
 
         return $this;
     }

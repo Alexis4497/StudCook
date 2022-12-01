@@ -14,7 +14,7 @@ class MarquesType extends AbstractType
     {
         $builder
             ->add('nomMarque')
-            ->add('lien_image_marque',FileType::class, ['required' => false])
+            ->add('imageFileMarque',FileType::class, ['required' => false])
         ;
     }
 
