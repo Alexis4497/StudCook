@@ -58,10 +58,10 @@ color: black;
 }
 
 #img-objectif{
-  width: 70%;
+  width: 35%;
   height: auto;
   float: right;
-  margin-right: 5%;
+  margin-right: 20%;
   margin-top: 5%;
   margin-bottom: 5%;
   vertical-align: middle;
@@ -219,4 +219,5 @@ color: black;
     height:100px;
     width:250px;
    }
+
     
