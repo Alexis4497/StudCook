@@ -27,15 +27,18 @@
   margin-top: 5%;
   margin-bottom: 5%;
   vertical-align: middle;
+  
+
 }
 
 #text-apropos p{
   margin-left: 5%;
   margin-right:5% ;
-  text-align: center;
+  text-align: left;
   font-size: 25px;
   margin-top:10%;
   color: black;
+  
 }
 #text-apropos{
   display: block;
@@ -45,7 +48,7 @@
 
 #text-objectif p{
 margin-left: 5%;
-text-align: center;
+text-align: left;
 font-size: 25px;
 margin-top:10%;
 color: black;
@@ -55,6 +58,7 @@ color: black;
   display: block;
   float: right;
   position: relative;
+  margin-top: -3%;
 }
 
 #img-objectif{
@@ -79,7 +83,7 @@ color: black;
 #text-nutritionniste p{
   margin-left: -30%;
   margin-right:5% ;
-  text-align: center;
+  text-align: left;
   font-size: 25px;
   margin-top:13%;
   color: black;
@@ -220,4 +224,19 @@ color: black;
     width:250px;
    }
 
-    
+    /******************************** MEDIA QUERIES ************************************/
+    @media screen and (max-width: 470px){
+    #img-apropos{
+      float: left;
+      width:5000px;
+      height:auto;
+      margin-left: 15%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      position: relative;
+      
+    }
+  }
