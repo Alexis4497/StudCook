@@ -225,18 +225,43 @@ color: black;
    }
 
     /******************************** MEDIA QUERIES ************************************/
-    @media screen and (max-width: 470px){
-    #img-apropos{
-      float: left;
-      width:5000px;
-      height:auto;
-      margin-left: 15%;
-      margin-top: 5%;
-      margin-bottom: 5%;
-      vertical-align: middle;
-      display: flex;
-      align-items: center;
-      position: relative;
-      
+    @media screen and (max-width: 720px){
+
+      #img-apropos{
+        width:200px;
+        height:auto;
+        margin-left: 15%;      
+        vertical-align: middle;
+      }
+      #text-apropos p {
+       text-align: center;
+       padding-top: 0;
+      }
+  
+      #img-objectif{
+        width:200px;
+        height:auto;
+        padding-left: 20%;     
+        vertical-align: middle;
+      }
+      #text-objectif{
+        text-align: center;
+        padding-top: 0;
+      }
+  
+      #img-nutritionniste{
+        width:200px;
+        height:auto;    
+        vertical-align: middle;
+      }
+  
+      #text-nutritionniste p {
+        text-align: center;
+        padding-top: 0;
+        padding-left: 35%;
+      }
+
+      .slider::before, .slider::after {
+       background: none;
+     }
     }
-  }

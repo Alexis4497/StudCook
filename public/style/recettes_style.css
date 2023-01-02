@@ -176,6 +176,21 @@ h1{
 
 
 /******************************** MEDIA QUERIES ************************************/
-@media screen and (max-width: 470px){
+@media screen and (max-width: 720px){
+  .col-4{
+    width: 75%;
+  }
+  .row{
+    margin: 0;
+    padding: 0;
+  }
 
+  .pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90%;
+  }
+  
+ 
 }
